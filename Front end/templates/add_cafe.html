@@ -1,0 +1,38 @@
+
+{% from "bootstrap5/form.html" import render_form %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+
+    <div class="container">
+      <div class="row">
+        <div>
+            <form action="{{url_for('searchcafe')}}" method="POST">
+                <a class="home-btn" href="{{url_for('home')}}"> <butto >Home</butto></a>
+                <input type="text" name="search" placeholder="Search Location">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div>
+            <a href="{{url_for('addcafe')}}"><button>Add Cafe</button></a>
+        </div>
+      </div>
+    </div>
+    </header>
+    <section class="add-cafe">
+        <div class="container">
+            <div class="row">
+        {{render_form(form, button_map={"Add Coffee": "dark"}) }}
+                </div>
+            </div>
+    </section>
+</body>
+</html>

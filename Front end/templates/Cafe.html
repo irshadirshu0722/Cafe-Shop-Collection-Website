@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+      
+    <div class="container">
+      <div class="row">
+        <div>
+            <form action="{{url_for('searchcafe')}}" method="POST">
+               <a class="home-btn" href="{{url_for('home')}}"> <butto >Home</butto></a>
+                <input type="text" name="search" placeholder="Search Location">
+                <button type="submit">Search</button>
+                
+            </form>
+        </div>
+        <div>
+            <a href="{{url_for('addcafe')}}"><button>Add Cafe</button></a>
+        </div>
+      </div>
+    </div>
+    </header>
+    <section class="cafe-body">
+        <div class="container">
+            <div class="row">
+                {% if cafes %}
+                {% for cafe in cafes %}
+                <div class="cafe-card">
+                  <div class="cafe-details">
+                       <div class="cafe-img"><img src= {{ cafe.img_url }}></div>
+                  </div>
+                  <div class="details">
+                    <h1>{{ cafe.name }}</h1>
+                    <div class="price-location">
+                        <div>☕ Coffee {{ cafe.coffee_price }} </div>
+                        <div><a href="{{cafe.map_url}}">🗺️ {{cafe.location}}</a> </div>
+                    </div>
+                    <div class="seat-toilet-wifi">
+                        <ul>
+                            <li>
+                                💺{{cafe.seats}}
+                            </li>
+                            <li>
+                                {% if cafe.has_toilet %}
+                                  🚽✅
+                                {% else %}
+                                   🚽❌
+                                {% endif %}
+                            </li>
+                            <li>
+                                {% if cafe.has_wifi %}
+                                 📶✅
+                                {% else %}
+                                   📶❌
+                                {% endif %}
+                            </li>
+                            <li>
+                                {% if cafe.has_sockets %}
+                                 🔌✅
+                                {% else %}
+                                   🔌❌
+                                {% endif %}
+
+                            </li>
+                            <li>
+                                {% if cafe.can_take_calls %}
+                                 ☎✅
+                                {% else %}
+                                   ☎❌
+                                {% endif %}
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                 <a class="delete-btn" href="{{url_for('delete',id=cafe.id)}}"><button>delete</button></a>
+            </div>
+
+                 {% endfor %}
+                {% endif %}
+               </div>
+          </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,236 @@
+header{
+    width: 100%;
+    height:80px;
+    background-color: rgba(42, 85, 131, 0.677);
+    border-radius: 20px;
+    
+    position: absolute;
+    top: 40px;
+}
+body{
+    background: url("./images/Cafe\ Background\ 2.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+    padding-top: 160px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .container .row{
+   max-width: 500px;
+   display: flex;
+   height: 80px;
+   align-items: center;
+   justify-content: space-between;
+   width: 100%;
+}
+header input{
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: none;
+}
+header form button,header button{
+    padding: 14px 12px;
+    border: none;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+header form button{
+    background-color: rgb(8, 54, 82);
+    color: white;
+}
+header  button{
+    background-color: rgb(23, 26, 21);
+    color: white;
+}
+
+.home-body .row{
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+ justify-content: center;
+ position: relative;
+ 
+}
+.home-body .row img:first-child{
+    width: 500px;
+    height: 600px;
+    border-radius: 20px;
+    margin-top: 60px;
+    border: 10px outset;
+    
+}
+.cafe-body{
+    width: 100%;
+    background-color: transparent;
+}
+
+.cafe-body .row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 1000px;
+    column-gap: 50px;
+    row-gap: 50px;
+
+}
+.cafe-body .row .cafe-card{
+    max-width: 700px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    position: relative;
+}
+.cafe-body .row .cafe-card img{
+    min-width: 200px;
+    width:100%;
+    height:190px;
+  
+}
+.cafe-body .row div h1{
+    font-size: 30px;
+    color: white;
+
+}
+.cafe-body  .price-location{
+    display: flex;
+    gap: 30px;
+    height: fit-content;
+}
+.cafe-body  .seat-toilet-wifi {
+    width: 100%;
+}
+.cafe-body .details .price-location div{
+    background-color: rgb(188, 171, 171);
+    padding: 5px;
+    border-radius: 4px;
+
+
+}
+.cafe-body .seat-toilet-wifi ul{
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    justify-content: start;
+}
+.cafe-body .seat-toilet-wifi li{
+    background-color: rgb(188, 171, 171);
+    width: 45px;
+    border-radius: 4px;
+    padding: 5px;
+    
+}
+.cafe-body .seat-toilet-wifi li:first-child{
+    color: rgb(0, 0, 0);
+    
+}
+*{
+    list-style: none;
+}
+.cafe-body .details{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+h1{
+    margin: 0;
+    height: fit-content;
+}
+*{
+    height: fit-content;
+}
+.cafe-body .cafe-card img{
+    width: 250px;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.add-cafe input{
+    padding: 10px;
+    width: 100%;
+    border-radius:10px ;
+    color: black;
+    
+    
+
+}
+.add-cafe label{
+    font-size: 30px;
+    
+
+}
+.add-cafe .row {
+    display: flex;
+    
+    flex-direction: column;
+    gap: 20px;
+    
+
+}
+.add-cafe .row form {
+    display: flex;
+    
+    flex-direction: column;
+    gap: 20px;
+    
+
+}
+.add-cafe .form-check{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.add-cafe *{
+    color: white;
+}
+.add-cafe input[type="submit"]{
+    color: black;
+}
+form{
+    margin: 0;
+}
+@media (max-width:1450px) {
+    .cafe-body .row{
+        display: grid;
+        grid-template-columns: 1fr ;
+        width: 1000px;
+        column-gap: 50px;
+        row-gap: 50px;
+    
+    }
+}
+@media (max-width:500px) {
+    .cafe-body .row .cafe-card{
+        display: grid;
+        grid-template-columns: 1fr ;
+        gap: 20px;
+    
+    }
+}
+.home-btn{
+    margin-right: 20px;
+}
+.delete-btn{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    
+
+}
+.delete-btn button{
+   background-color: black;
+   border: 1px solid white;
+   border-radius: 5px;
+   color: white;
+    
+
+}
